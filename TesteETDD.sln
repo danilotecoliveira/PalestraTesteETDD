@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D2993AC2-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{B97E1A0D-A248-4C32-8C16-0169D8D38FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteETDD.Repository", "TesteETDD.Repository\TesteETDD.Repository.csproj", "{75E5A87C-7DA6-4DFD-80A0-1AC3DF0FE6CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteETDD.Core", "TesteETDD.Repository\TesteETDD.Core.csproj", "{75E5A87C-7DA6-4DFD-80A0-1AC3DF0FE6CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteETDD.Tests", "TesteETDD.Tests\TesteETDD.Tests.csproj", "{7F7FAE4E-76A3-4732-B254-9366EDEAB9E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteETDD.Core.Tests", "TesteETDD.Tests\TesteETDD.Core.Tests.csproj", "{7F7FAE4E-76A3-4732-B254-9366EDEAB9E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteETDD.Framework.Repository", "TesteETDD.Framework.Repository\TesteETDD.Framework.Repository.csproj", "{B7A109D9-D599-49FC-A12B-61259F0CB40D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteETDD.Framework", "TesteETDD.Framework.Repository\TesteETDD.Framework.csproj", "{B7A109D9-D599-49FC-A12B-61259F0CB40D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteETDD.Framework.Tests", "TesteETDD.Framework.Tests\TesteETDD.Framework.Tests.csproj", "{52110092-D041-4790-8929-A8AC5EA81FF2}"
 EndProject
