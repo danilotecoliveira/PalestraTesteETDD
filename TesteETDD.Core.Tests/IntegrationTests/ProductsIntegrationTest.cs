@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using TesteETDD.Core.Web.Models;
 using TesteETDD.Core.Web.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -23,6 +24,23 @@ namespace TesteETDD.Core.Tests
 
             Assert.IsTrue(Guid.TryParse(result.ToString(), out _));
             Assert.AreNotEqual(result, Guid.Empty);
+        }
+
+        [TestCleanup]
+        public void Clear_Tests()
+        {
+            var list = _products.GetAll();
+
+            foreach (var item in list)
+            {
+                _products.Delete(item.ProductId);
+            }
+
+            var newList = _products.GetAll();
+
+            Assert.IsTrue(list.ToList().Count > 0);
+            Assert.IsTrue(newList.ToList().Count == 0);
+            Assert.AreNotEqual(list, newList);
         }
     }
 }
