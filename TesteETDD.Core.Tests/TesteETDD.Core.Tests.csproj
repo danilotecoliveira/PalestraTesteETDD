@@ -12,8 +12,4 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TesteETDD.Core.Web\TesteETDD.Core.Web.csproj" />
-  </ItemGroup>
-
 </Project>
