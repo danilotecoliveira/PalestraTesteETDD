@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using TesteETDD.Core.Web.Models;
 using TesteETDD.Core.Web.Repositories;
+using TesteETDD.Core.Web.Repositories.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TesteETDD.Core.Tests
@@ -9,7 +10,12 @@ namespace TesteETDD.Core.Tests
     [TestClass]
     public class ProductsIntegrationTest
     {
-        private Products _products = new Products();
+        private IProducts _products;
+
+        public ProductsIntegrationTest()
+        {
+            _products = new Products();
+        }
 
         [TestMethod]
         public void TestMethod1()

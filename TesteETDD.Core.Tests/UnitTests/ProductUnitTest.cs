@@ -1,6 +1,8 @@
 ﻿using System;
 using TesteETDD.Core.Web.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using TesteETDD.Core.Web.Repositories.Interfaces;
 
 namespace TesteETDD.Core.Tests.UnitTests
 {
@@ -52,6 +54,12 @@ namespace TesteETDD.Core.Tests.UnitTests
                 Assert.AreEqual("A descrição do produto é obrigatória", ex.Message);
                 throw;
             }
+        }
+
+        [TestMethod]
+        public void Insert_Mock_Product()
+        {
+            Mock<IProducts> SendProduct = new Mock<IProducts>();
         }
     }
 }

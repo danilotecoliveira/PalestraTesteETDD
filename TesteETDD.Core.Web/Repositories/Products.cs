@@ -6,7 +6,7 @@ using TesteETDD.Core.Web.Repositories.Interfaces;
 
 namespace TesteETDD.Core.Web.Repositories
 {
-    public class Products : IRepository<Product>
+    public class Products : IProducts
     {
         private SqlConnection conn;
         //private string strConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Projects\PalestraTesteETDD\DB\dbtestetdd.mdf;Integrated Security=True;Connect Timeout=30";
