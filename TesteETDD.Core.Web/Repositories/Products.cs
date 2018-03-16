@@ -96,5 +96,10 @@ namespace TesteETDD.Core.Web.Repositories
 
             return list;
         }
+
+        public bool SendProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

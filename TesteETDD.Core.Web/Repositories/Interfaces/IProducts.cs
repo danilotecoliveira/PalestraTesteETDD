@@ -10,5 +10,6 @@ namespace TesteETDD.Core.Web.Repositories.Interfaces
         Product Get(Guid id);
         Guid Insert(Product product);
         void Delete(Guid id);
+        bool SendProduct(Product product);
     }
 }

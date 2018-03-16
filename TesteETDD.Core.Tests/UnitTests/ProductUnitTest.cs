@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Moq;
+using System;
 using TesteETDD.Core.Web.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+using TesteETDD.Core.Web.Repositories;
 using TesteETDD.Core.Web.Repositories.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TesteETDD.Core.Tests.UnitTests
 {
@@ -59,7 +60,14 @@ namespace TesteETDD.Core.Tests.UnitTests
         [TestMethod]
         public void Insert_Mock_Product()
         {
-            Mock<IProducts> SendProduct = new Mock<IProducts>();
+            var product = new Product();
+            Mock<IProducts> sendProduct = new Mock<IProducts>();
+            sendProduct.Setup(m => m.SendProduct(product)).Returns(true);
+            var subject = new Products();
+
+            var result = subject.SendProduct(new Product());
+
+            Assert.AreEqual(true, result);
         }
     }
 }
