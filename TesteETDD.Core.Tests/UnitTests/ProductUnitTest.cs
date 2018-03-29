@@ -10,6 +10,8 @@ namespace TesteETDD.Core.Tests.UnitTests
     [TestClass]
     public class ProductUnitTest
     {
+        #region CODE 1
+
         [TestMethod]
         public void Check_If_Product_Is_Valid()
         {
@@ -22,6 +24,10 @@ namespace TesteETDD.Core.Tests.UnitTests
             var result = product.IsValid(product);
             Assert.IsTrue(result);
         }
+
+        #endregion
+
+        #region CODE 3
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
@@ -57,17 +63,22 @@ namespace TesteETDD.Core.Tests.UnitTests
             }
         }
 
+        #endregion
+
+        #region CODE 1 MOCK
+
         [TestMethod]
         public void Insert_Mock_Product()
         {
             var product = new Product();
             Mock<IProducts> sendProduct = new Mock<IProducts>();
             sendProduct.Setup(m => m.SendProduct(product)).Returns(true);
-            var subject = new Products();
 
-            var result = subject.SendProduct(new Product());
+            var result = sendProduct.Object.SendProduct(product);
 
             Assert.AreEqual(true, result);
         }
+
+        #endregion
     }
 }

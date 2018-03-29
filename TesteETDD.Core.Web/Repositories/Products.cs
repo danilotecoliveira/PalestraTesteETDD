@@ -25,7 +25,7 @@ namespace TesteETDD.Core.Web.Repositories
                         conn.Open();
                         cmd.Connection = conn;
                         cmd.CommandType = System.Data.CommandType.Text;
-                        cmd.CommandText = @"select * from Products where Name like 'teste'";
+                        cmd.CommandText = @"select * from Products where Name like '%teste%'";
 
                         list = Mapper(cmd.ExecuteReader());
                     }
@@ -76,7 +76,18 @@ namespace TesteETDD.Core.Web.Repositories
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            using (conn = new SqlConnection(strConexao))
+            {
+                using (var cmd = new SqlCommand())
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = $"delete from Products where ProductId = @ProductId";
+                    cmd.Parameters.AddWithValue("@ProductId", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         private List<Product> Mapper(SqlDataReader reader)

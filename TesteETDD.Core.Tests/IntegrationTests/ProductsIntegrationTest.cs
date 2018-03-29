@@ -18,7 +18,7 @@ namespace TesteETDD.Core.Tests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void Insert_Product_With_Success()
         {
             var product = new Product
             {
@@ -31,6 +31,8 @@ namespace TesteETDD.Core.Tests
             Assert.IsTrue(Guid.TryParse(result.ToString(), out _));
             Assert.AreNotEqual(result, Guid.Empty);
         }
+
+        #region CODE Test void
 
         [TestCleanup]
         public void Clear_Tests()
@@ -48,5 +50,7 @@ namespace TesteETDD.Core.Tests
             Assert.IsTrue(newList.ToList().Count == 0);
             Assert.AreNotEqual(list, newList);
         }
+
+        #endregion
     }
 }
