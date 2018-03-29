@@ -10,47 +10,50 @@ namespace TesteETDD.Core.Tests
     [TestClass]
     public class ProductsIntegrationTest
     {
-        private IProducts _products;
+        #region CODE
 
-        public ProductsIntegrationTest()
-        {
-            _products = new Products();
-        }
+        //private IProducts _products;
 
-        [TestMethod]
-        public void Insert_Product_With_Success()
-        {
-            var product = new Product
-            {
-                Name = "Produto teste",
-                Description = "Descrição do produto teste"
-            };
+        //public ProductsIntegrationTest()
+        //{
+        //    _products = new Products();
+        //}
 
-            var result = _products.Insert(product);
+        //[TestMethod]
+        //public void Insert_Product_With_Success()
+        //{
+        //    var product = new Product
+        //    {
+        //        Name = "Produto teste",
+        //        Description = "Descrição do produto teste"
+        //    };
 
-            Assert.IsTrue(Guid.TryParse(result.ToString(), out _));
-            Assert.AreNotEqual(result, Guid.Empty);
-        }
+        //    var result = _products.Insert(product);
 
-        #region CODE Test void
+        //    Assert.IsTrue(Guid.TryParse(result.ToString(), out _));
+        //    Assert.AreNotEqual(result, Guid.Empty);
+        //}
 
-        [TestCleanup]
-        public void Clear_Tests()
-        {
-            var list = _products.GetAll();
+        //[TestCleanup]
+        //public void Clear_Tests()
+        //{
+        //    var list = _products.GetAll();
 
-            foreach (var item in list)
-            {
-                _products.Delete(item.ProductId);
-            }
+        //    foreach (var item in list)
+        //    {
+        //        _products.Delete(item.ProductId);
+        //    }
 
-            var newList = _products.GetAll();
+        //    var newList = _products.GetAll();
 
-            Assert.IsTrue(list.ToList().Count > 0);
-            Assert.IsTrue(newList.ToList().Count == 0);
-            Assert.AreNotEqual(list, newList);
-        }
+        //    Assert.IsTrue(list.ToList().Count > 0);
+        //    Assert.IsTrue(newList.ToList().Count == 0);
+        //    Assert.AreNotEqual(list, newList);
+        //}
 
         #endregion
+
+
+
     }
 }

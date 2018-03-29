@@ -8,25 +8,25 @@ namespace TesteETDD.Core.Web.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        #region CODE 1
+        #region CODE
 
-        public bool IsValid(Product product)
-        {
-            return (!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Description));
+        //public bool IsValid(Product product)
+        //{
+        //    return (!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Description));
 
-            #region CODE 3
+        //    //if (string.IsNullOrWhiteSpace(Name))
+        //    //    throw new Exception("O nome do produto é obrigatório");
 
-            //if (string.IsNullOrWhiteSpace(Name))
-            //    throw new Exception("O nome do produto é obrigatório");
+        //    //if (string.IsNullOrWhiteSpace(Description))
+        //    //    throw new Exception("A descrição do produto é obrigatória");
 
-            //if (string.IsNullOrWhiteSpace(Description))
-            //    throw new Exception("A descrição do produto é obrigatória");
-
-            //return true;
-
-            #endregion
-        }
+        //    //return true;
+        //}
 
         #endregion
+
+
+
+
     }
 }

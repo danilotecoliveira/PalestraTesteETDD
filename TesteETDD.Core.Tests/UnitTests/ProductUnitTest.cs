@@ -10,75 +10,71 @@ namespace TesteETDD.Core.Tests.UnitTests
     [TestClass]
     public class ProductUnitTest
     {
-        #region CODE 1
+        #region CODE
 
-        [TestMethod]
-        public void Check_If_Product_Is_Valid()
-        {
-            var product = new Product
-            {
-                Name = "Nome do produto",
-                Description = "Descrição do produto"
-            };
+        //[TestMethod]
+        //public void Check_If_Product_Is_Valid()
+        //{
+        //    var product = new Product
+        //    {
+        //        Name = "Nome do produto",
+        //        Description = "Descrição do produto"
+        //    };
 
-            var result = product.IsValid(product);
-            Assert.IsTrue(result);
-        }
+        //    var result = product.IsValid(product);
+        //    Assert.IsTrue(result);
+        //}
 
-        #endregion
+        //[TestMethod]
+        //[ExpectedException(typeof(Exception))]
+        //public void Check_If_Validation_Works_For_Name()
+        //{
+        //    var product = new Product
+        //    {
+        //        Name = "",
+        //        Description = "Descrição do produto"
+        //    };
 
-        #region CODE 3
+        //    product.IsValid(product);
+        //}
 
-        [TestMethod]
-        [ExpectedException(typeof(Exception))]
-        public void Check_If_Validation_Works_For_Name()
-        {
-            var product = new Product
-            {
-                Name = "",
-                Description = "Descrição do produto"
-            };
+        //[TestMethod]
+        //[ExpectedException(typeof(Exception))]
+        //public void Check_If_Validation_Works_For_Description()
+        //{
+        //    try
+        //    {
+        //        var product = new Product
+        //        {
+        //            Name = "Nome do produto",
+        //            Description = ""
+        //        };
 
-            product.IsValid(product);
-        }
+        //        var result = product.IsValid(product);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Assert.AreEqual("A descrição do produto é obrigatória", ex.Message);
+        //        throw;
+        //    }
+        //}
 
-        [TestMethod]
-        [ExpectedException(typeof(Exception))]
-        public void Check_If_Validation_Works_For_Description()
-        {
-            try
-            {
-                var product = new Product
-                {
-                    Name = "Nome do produto",
-                    Description = ""
-                };
+        //[TestMethod]
+        //public void Insert_Mock_Product()
+        //{
+        //    var product = new Product();
+        //    Mock<IProducts> sendProduct = new Mock<IProducts>();
+        //    sendProduct.Setup(m => m.SendProduct(product)).Returns(true);
 
-                var result = product.IsValid(product);
-            }
-            catch (Exception ex)
-            {
-                Assert.AreEqual("A descrição do produto é obrigatória", ex.Message);
-                throw;
-            }
-        }
+        //    var result = sendProduct.Object.SendProduct(product);
 
-        #endregion
-
-        #region CODE 1 MOCK
-
-        [TestMethod]
-        public void Insert_Mock_Product()
-        {
-            var product = new Product();
-            Mock<IProducts> sendProduct = new Mock<IProducts>();
-            sendProduct.Setup(m => m.SendProduct(product)).Returns(true);
-
-            var result = sendProduct.Object.SendProduct(product);
-
-            Assert.AreEqual(true, result);
-        }
+        //    Assert.AreEqual(true, result);
+        //}
 
         #endregion
+
+
+
+
     }
 }
